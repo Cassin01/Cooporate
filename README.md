@@ -39,13 +39,13 @@ result = Result[str](State.Ok, Type.Str, "Hello", None)
 
 ### self.state
 
-実行が成功した``OK``
+* 実行が成功した: ``OK``
   
-実行が失敗した``Err``
+* 実行が失敗した: ``Err``
   
-ファイル名が見つからない``FileNotFound``
+* ファイル名が見つからない: ``FileNotFound``
   
-関数名が見つからない``FunctionNotFound``
+* 関数名が見つからない: ``FunctionNotFound``
   
 の4値をとります。
   
@@ -60,3 +60,25 @@ result = Result[str](State.Ok, Type.Str, "Hello", None)
 ### self.err_message
 
 実行が失敗した場合(``State.Err``)のエラーメッセージです。
+
+## 実行例
+
+ファイル名: ``input.py``
+関数名: ``get_name()``
+
+```Python3
+class Person:
+    def __init__(self,age,name):
+        self.__age = age
+        self.__name = name
+    def get_age(self):
+        return self.__age
+    def get_name(self):
+        return self.__name
+
+    
+
+p = Person(14, "Ayaya")
+print(str(p.get_name()))
+print(str(p.get_age()))
+```
