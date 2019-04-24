@@ -14,5 +14,7 @@ class Runner:
         
         p = Person(14, "Ayaya")
         self.__value = p.get_name()
+        print(str(p.get_name()) + str(p.get_age()))
+        print(str(p.get_age()))
     def get_value(self):
         return self.__value

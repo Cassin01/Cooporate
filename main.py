@@ -8,8 +8,10 @@ class RunCode:
         footer = read_file.ReadFile("./header_footer/", "footer.py").get_code()
 
         write_file.WriteFile("runner.py", header + '\n', 'w')
-        write_file.WriteFile("runner.py", self.use_till_find(code, func_name), 'a')
+        codef, codeb = self.use_till_find(code, func_name)
+        write_file.WriteFile("runner.py", codef, 'a')
         write_file.WriteFile("runner.py", self.gain(file_name, func_name), 'a')
+        write_file.WriteFile("runner.py", codeb, 'a')
         write_file.WriteFile("runner.py", footer + '\n', 'a')
     
     def get_val(self):
@@ -18,13 +20,18 @@ class RunCode:
 
 
     def use_till_find(self,lines, module_name):
-        code = ""
+        codef = ""
+        codeb = ""
+        f = True
         space4 = '    '
         for line in lines.split("\n"):
             if module_name in line:
-                return code
-            else:
-                code += space4 + space4 + line + '\n'
+                f = False
+            if f == True:
+                codef += space4 + space4 + line + '\n'
+            elif f == False:
+                codeb += space4 + space4 + line + '\n'
+        return (codef, codeb)
 
     def gain(self,module_name, func_name):
         indent = '    '
