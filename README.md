@@ -1,4 +1,4 @@
-# Cooporate
+# ipu_run_a_program
 
 ## 受け取るもの
 
