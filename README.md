@@ -64,6 +64,7 @@ result = Result[str](State.Ok, Type.Str, "Hello", None)
 ## 実行例
 
 ファイル名: ``input.py``
+
 関数名: ``p.get_name()``
 
 ```Python3
