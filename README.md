@@ -37,7 +37,7 @@ class Result(Generic[T]):
 result = Result[str](State.Ok, Type.Str, "Hello", None)
 ```
 
-* self.state: 実行が成功した、実行が失敗した、ファイル名が見つからない、関数名が見つからないの4値をとります。
+* self.state: 実行が成功した``OK``、実行が失敗した``Err``、ファイル名が見つからない``FileNotFound``、関数名が見つからない``FunctionNotFound``の4値をとります。
 * self.val: 実行した関数が返却した値です。
 * self.val_type: 実行した関数が返却する値の型です。
 * self.err_message: 実行が失敗した場合(``State.Err``)のエラーメッセージです。
