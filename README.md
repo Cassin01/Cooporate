@@ -98,6 +98,6 @@ class Person:
         return self.__name
    
 p = Person(14, "Ayaya")
-print(str(p.get_name()))
+p.get_name()
 ```
 
