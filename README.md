@@ -64,9 +64,10 @@ result = Result[str](State.Ok, Type.Str, "Hello", None)
 ## 実行例
 
 ファイル名: ``input.py``
-関数名: ``get_name()``
+関数名: ``p.get_name()``
 
 ```Python3
+#input.py
 class Person:
     def __init__(self,age,name):
         self.__age = age
@@ -79,6 +80,24 @@ class Person:
     
 
 p = Person(14, "Ayaya")
-print(str(p.get_name()))
+print(str(p.get_name()) + str(p.get_age()))
 print(str(p.get_age()))
 ```
+
+### 実行されるプログラム
+
+```Python3
+#input.py
+class Person:
+    def __init__(self,age,name):
+        self.__age = age
+        self.__name = name
+    def get_age(self):
+        return self.__age
+    def get_name(self):
+        return self.__name
+   
+p = Person(14, "Ayaya")
+print(str(p.get_name()))
+```
+
